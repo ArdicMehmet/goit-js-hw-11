@@ -1,18 +1,165 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100dvh;
+}
+header{
+  text-align: center;
+  margin: 40px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 36px;
+}
+.search{
+  display: flex;
+  gap:8px
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style-type: none;
+}
+input {
+  width: 272px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  outline: none;
+  padding: 8px 16px;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid gray;
+}
+input:hover {
+  border: 1px solid #000;
+}
+input:focus{
+  border:1px solid blue;
+}
+
+button {
+  height: 40px;
+  border: 1px transparent;
+  border-radius: 8px;
+  background-color: #4E75FF;
+  color: #fff;
+  padding: 8px 16px;
+  line-height: 24px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  outline: none;
+}
+button:hover{
+  background-color: #6C8CFF;
+  cursor: pointer;
+}
+
+.messageContainer{
+  position: absolute;
+  right: 36px;
+  top: 36px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  width: 432px;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #FAFAFB;
+}
+.messageContainer p{
+  margin-right: 24px;
+}
+.danger{
+  background-color: #EF4040;
+  border-bottom: 2px solid #FFBEBE;
+  border-radius: 4px;
+}
+.warning{
+  margin-right: 12px;
+}
+.warning img {
+  width: 24px;
+  height: 24px;
+}
+.close img{
+  width: 16px;
+  height: 16px;
+}
+.close:hover{
+  cursor: pointer;
+  color: rgb(216, 214, 214);
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  gap: 24px;
+}
+
+.gallery li {
+  flex: 1 1 calc(33.333% - 24px); /* 3 resim yan yana */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  border: Mixed solid #808080
+}
+
+.gallery a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid transparent;
+}
+.general-likes-container{
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 4px 20px;
+}
+.likes-container {
+  text-align: center;
+}
+
+.likes-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 16px;
+  font-size: 12px;
+  color: #2E2F42;
+}
+
+.likes {
+  margin-top: 5px; /* Her bir likes için üstten boşluk */
+  line-height: 24px;
+  font-size: 12px;
+  color: #2E2F42;
+  font-weight: 400;
+}
