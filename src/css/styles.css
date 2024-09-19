@@ -66,7 +66,7 @@ button:hover{
   cursor: pointer;
 }
 
-.messageContainer{
+/* .messageContainer{
   position: absolute;
   right: 36px;
   top: 36px;
@@ -103,7 +103,7 @@ button:hover{
 .close:hover{
   cursor: pointer;
   color: rgb(216, 214, 214);
-}
+} */
 
 /* Gallery */
 .gallery {
@@ -157,9 +157,21 @@ button:hover{
 }
 
 .likes {
-  margin-top: 5px; /* Her bir likes için üstten boşluk */
+  margin-top: 5px;
   line-height: 24px;
   font-size: 12px;
   color: #2E2F42;
   font-weight: 400;
+}
+.iziToast-theme-custom {
+  background: #EF4040 !important;
+}
+.iziToast-message, .iziToast-close{
+  color: #FFF !important;
+}
+.iziToast .iziToast-icon {
+  color: #FFFFFF !important;
+  font-size: 24px;
+  margin-right: 10px;
+  margin-top: 10px;
 }

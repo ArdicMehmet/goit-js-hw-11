@@ -1,5 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 
 {/* <li>
           <a href="./img/deneme.png">
@@ -93,11 +95,24 @@ async function getPhoto(searchText){
     });
     }
     else{
-      messageContainerDOM.style.display = "flex";
-      const closeBtn = document.querySelector('.close');
-      closeBtn.addEventListener('click', () => {
-        messageContainerDOM.style.display = "none";
-      })
+      // messageContainerDOM.style.display = "flex";
+      // const closeBtn = document.querySelector('.close');
+      // closeBtn.addEventListener('click', () => {
+      //   messageContainerDOM.style.display = "none";
+      // })
+      iziToast.show({
+        theme: 'custom',
+        icon: 'fas fa-exclamation-circle',
+        message: 'Sorry, there are no images matching your search query. Please, try again!',
+        position: 'topRight',
+        progressBarColor: '#B51B1B',
+        onOpening: function(instance, toast){
+            console.info('Modal is open');
+        },
+        onClosing: function(instance, toast, closedBy){
+            console.info('closedBy: ' + closedBy); // tells if it was closed by 'drag' or 'button'
+        }
+    });
     }
     
     
