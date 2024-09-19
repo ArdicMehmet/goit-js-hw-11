@@ -175,3 +175,10 @@ button:hover{
   margin-right: 10px;
   margin-top: 10px;
 }
+.loading{
+  display: none;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 10px 0;
+}

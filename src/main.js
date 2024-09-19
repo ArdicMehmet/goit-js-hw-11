@@ -27,23 +27,25 @@ import "izitoast/dist/css/iziToast.min.css";
           </a>
         </li> */}
 
-
+const loadingDOM = document.querySelector('.loading');
 const search_btn = document.querySelector('.searchBtn');
 const galleryDOM = document.querySelector('.gallery');
 const base_url = "https://pixabay.com/api/?"
 const api_key = "46048347-9d88aa79f4238f227ee13ac9b"
-const messageContainerDOM = document.querySelector('.messageContainer'); 
+// const messageContainerDOM = document.querySelector('.messageContainer'); 
 const searchInput = document.querySelector('.searchInput');
 async function getPhoto(searchText){
   galleryDOM.innerHTML="";
   const full_url = `${base_url}key=${api_key}&q=${searchText}&image_type=photo&orientation=horizontal&safesearch=true&per_page=9`;
   
   try {
+    loadingDOM.style.display = "block";
     const response = await fetch(full_url);
+    
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
-
+    loadingDOM.style.display = "none";
     const images = await response.json();
     if(images?.hits.length > 0){
       searchInput.value = "";
@@ -117,6 +119,7 @@ async function getPhoto(searchText){
     
     
   } catch (error) {
+    loadingDOM.style.display = "none";
     console.error(error.message);
   }
   
