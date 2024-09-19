@@ -33,9 +33,14 @@ const galleryDOM = document.querySelector('.gallery');
 const base_url = "https://pixabay.com/api/?"
 const api_key = "46048347-9d88aa79f4238f227ee13ac9b"
 // const messageContainerDOM = document.querySelector('.messageContainer'); 
+
+function refresh(){
+  galleryDOM.innerHTML="";
+}
+
 const searchInput = document.querySelector('.searchInput');
 async function getPhoto(searchText){
-  galleryDOM.innerHTML="";
+  refresh();
   const full_url = `${base_url}key=${api_key}&q=${searchText}&image_type=photo&orientation=horizontal&safesearch=true&per_page=9`;
   
   try {
